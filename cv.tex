@@ -1,0 +1,140 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{linkblue}{HTML}{4A6274}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\pagestyle{empty}
+\raggedright
+
+% Colors
+\definecolor{accent}{HTML}{2C3E50}
+\definecolor{light}{HTML}{999999}
+
+% Section heading style: quiet per Butterick — just small-caps, no rule
+\titleformat{\section}
+  {\normalsize\color{accent}\scshape\raggedright}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{1em}{0.3em}
+
+% Gentle bullet style
+\setlist[itemize]{
+  label=--,
+  leftmargin=1.5em,
+  itemsep=0.1em,
+  topsep=0.2em,
+  parsep=0pt
+}
+
+% Commands
+\newcommand{\role}[4]{%
+  \textbf{#1} \hfill \textcolor{light}{#3}\\
+  \textit{#2} \hfill \textcolor{light}{#4}\\[0.2em]
+}
+
+\newcommand{\sep}{\enspace\textperiodcentered\enspace}
+
+\begin{document}
+
+% ── Header ──────────────────────────────────────────
+\begin{center}
+  {\LARGE \textbf{Florin Popa}}\\[0.4em]
+  {\textcolor{light}{Senior Software Engineer}}\\[0.4em]
+  \href{mailto:pp.flrn@gmail.com}{pp.flrn@gmail.com}
+  \sep
+  \href{tel:+40741026333}{+40 741 026 333}
+  \sep
+  Bucharest, Romania\\[0.4em]
+  \href{https://www.linkedin.com/in/florin-popa-08405566/}{LinkedIn}
+  \sep
+  \href{https://github.com/FlorinPopaCodes}{GitHub}
+  \sep
+  \href{https://florinpopa.dev}{florinpopa.dev}
+\end{center}
+
+% ── Summary ─────────────────────────────────────────
+\section*{Summary}
+
+Backend engineer with 14+ years of experience building and scaling Ruby on Rails applications in Fintech and Payroll domains. Track record of performance optimization (reducing query times by orders of magnitude) and mentoring engineering teams. Experienced in breaking down monoliths and ensuring regulatory compliance in complex regulated software.
+
+% ── Experience ──────────────────────────────────────
+\section*{Experience}
+
+\role{Non-Disclosure Agreement}{Senior Software Engineer, Backend}{Remote}{May 2024 -- Dec 2025}
+\begin{itemize}
+  \item Modernized legacy payroll export system within 6 months, enabling client to complete migration to new payroll platform and support pricing increases
+  \item Core contributor to the payroll calculation engine ensuring compliance with French labor law for hours worked, absences, and edge case combinations
+  \item Reviewed hundreds of PRs and merged 100+ contributions to the Ruby on Rails monolith
+  \item Part of the team overseeing the most complex engine handling payroll calculations across the platform
+\end{itemize}
+
+\vspace{0.5em}
+\role{FairMoney}{Senior Software Engineer, Backend}{Remote}{June 2023 -- March 2024}
+\begin{itemize}
+  \item Extracted savings functionality from Ruby monolith into a dedicated Go microservice using the Strangler Fig pattern, serving hundreds of thousands of users
+  \item Led incident response for critical production issues affecting savings access, coordinating cross-functional debugging to restore service
+  \item Contributed to process improvements and advocated for better tooling and development practices
+\end{itemize}
+
+\vspace{0.5em}
+\role{Smily (Ex.\ Bookingsync)}{Senior Software Engineer, Backend}{Remote}{June 2022 -- May 2023}
+\begin{itemize}
+  \item Reduced CircleCI costs by 50--75\% by right-sizing compute resources, switched from multi-core to single-core workers since Ruby's GIL doesn't benefit from parallelization
+  \item Cut CI pipeline runtime from 20+ minutes to 8 minutes through test suite optimization and strategic caching
+  \item Unblocked feature development by implementing a support rotation in teams
+\end{itemize}
+
+\vspace{0.5em}
+\role{HHA (ex.\ Annkissam)}{Senior Software Engineer, Fullstack}{Remote}{Sept 2013 -- June 2022}
+\begin{itemize}
+  \item Optimized critical database queries in the billing system handling hundreds of gigabytes of client data, reducing report generation times from hours to minutes and query execution from minutes to seconds
+  \item Became the go-to engineer for SQL performance issues across projects, diagnosing and resolving slow queries that blocked client operations
+  \item Led Ruby and Rails upgrades across multiple applications from Rails 3 through Rails 6, ensuring zero-downtime migrations and maintaining backward compatibility
+  \item Led client data migrations, writing custom ETL scripts to import data from diverse legacy systems for enterprise client onboarding
+  \item Built automated timesheet entry and invoice processing systems serving employers with hundreds to thousands of employees each
+  \item Developed PDF-based employee onboarding system with pre-filled forms, reducing manual data entry and accelerating time-to-first-day
+  \item Mentored junior and mid-level engineers on Rails best practices, code quality, and career development
+  \item Became primary technical interviewer for backend candidates due to ability to assess depth of knowledge through targeted questioning
+  \item Collaborated in teams of 4--10 engineers across Enrollment, Billing, and Timesheet systems
+\end{itemize}
+
+\vspace{0.5em}
+\role{Catalyst Worldwide}{Team Lead}{Bucharest, Romania}{Aug 2012 -- Sept 2013}
+\begin{itemize}
+  \item Spearheaded project that led to the founding of a 50 person local company
+  \item Recognized by the CEO for a pivotal role in completing the project
+\end{itemize}
+
+\vspace{0.5em}
+\role{Wizart Studios}{Fullstack Web Developer, DevOps}{Bucharest, Romania}{Nov 2010 -- Aug 2012}
+\begin{itemize}
+  \item Built and maintained websites for small local and international clients
+  \item Helped build the front end of a Groupon clone
+\end{itemize}
+
+% ── Skills ──────────────────────────────────────────
+\section*{Skills}
+
+\begin{longtable}{@{}p{4cm}p{11cm}@{}}
+  \textsc{Languages}      & Ruby, JavaScript, Go \\[0.15em]
+  \textsc{Frameworks}     & Ruby on Rails, RSpec, Sidekiq, Sorbet \\[0.15em]
+  \textsc{Infrastructure} & Linux, macOS, AWS, GCP, Docker, Git, GitHub Actions, CircleCI \\[0.15em]
+  \textsc{Databases}      & PostgreSQL, MySQL, Redis \\[0.15em]
+  \textsc{Practices}      & TDD, BDD, DDD, Performance Optimization, Code Review, Technical Mentoring \\
+\end{longtable}
+
+% ── Education ───────────────────────────────────────
+\section*{Education}
+
+\textbf{Politehnica University} \hfill \textcolor{light}{Bucharest, Romania}\\
+Bachelor of Science in Engineering, Applied Math and CS in Engineering \hfill \textcolor{light}{2008 -- 2012}
+
+\end{document}
