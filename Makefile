@@ -1,4 +1,4 @@
-.PHONY: build watch clean setup
+.PHONY: build watch clean setup release
 
 PDF = cv.pdf
 TEX = cv.tex
@@ -20,6 +20,9 @@ watch:
 
 clean:
 	rm -f $(PDF) *.aux *.log *.out
+
+release: $(PDF)
+	gh release create $(shell date +%Y-%m-%d) $(PDF) --title "CV — $(shell date +%Y-%m-%d)" --notes "Built on $(shell date +%Y-%m-%d)" --latest --clobber
 
 setup:
 	@echo "Installing dependencies..."
