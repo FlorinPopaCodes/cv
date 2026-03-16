@@ -6,9 +6,14 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \definecolor{linkblue}{HTML}{4A6274}
-\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+\hypersetup{
+  colorlinks=true, urlcolor=linkblue, linkcolor=linkblue,
+  pdfauthor={Florin Popa},
+  pdftitle={Florin Popa - Senior Software Engineer},
+  pdfsubject={CV / Resume},
+  pdfkeywords={Ruby, Rails, Go, Backend, Fintech, Payroll, PostgreSQL, AWS, Microservices, Performance Optimization}
+}
 \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
-\usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{titlesec}
 
@@ -27,7 +32,7 @@
 
 % Gentle bullet style
 \setlist[itemize]{
-  label=--,
+  label=\textbullet,
   leftmargin=1.5em,
   itemsep=0.1em,
   topsep=0.2em,
@@ -63,90 +68,92 @@
 % ── Summary ─────────────────────────────────────────
 \section*{Summary}
 
-Backend engineer specializing in complex regulated software like payroll engines, fintech platforms, and HR systems serving hundreds of thousands of users. 10+ years of Ruby and Rails experience, from legacy modernization and monolith decomposition to performance optimization. Trusted to lead technical decisions, mentor teams, and deliver in high-stakes domains where correctness matters.
+Backend engineer who drives technical direction across teams building regulated software: payroll engines, fintech platforms, and HR systems serving hundreds of thousands of users. 10+ years of Ruby and Rails experience, from breaking apart monoliths to cutting CI costs by 75\%. Track record of improving systems beyond code, introducing on-call processes, raising the hiring bar, and multiplying team output through mentoring and code review.
 
 % ── Experience ──────────────────────────────────────
 \section*{Experience}
 
 \role{HR-Tech French SaaS (Series A)}{Freelance Software Engineer, Backend}{Remote}{Nov 2024 -- Dec 2025}
 \begin{itemize}
-  \item Core contributor to the payroll calculation engine, ensuring compliance with French labor law for hours worked, absences, and edge case combinations
-  \item Reviewed hundreds of PRs and merged 100+ contributions to the Ruby on Rails monolith
-  \item Part of the team overseeing the most complex engine handling payroll calculations across the platform
+  \item Part of the team overseeing the most complex engine handling payroll calculations across the platform % senior — reframe around ownership/direction-setting for staff
+  \item Core contributor to the payroll calculation engine, ensuring compliance with French labor law for hours worked, absences, and edge case combinations % senior
+  \item Reviewed hundreds of PRs and merged 100+ contributions to the Ruby on Rails monolith % senior
 \end{itemize}
 
-\role{HR-Tech French SaaS (Series A)}{Freelance Software Engineer, Backend}{Remote}{May 2024 -- Oct 2025}
+\role{HR-Tech French SaaS (Series A)}{Freelance Software Engineer, Backend}{Remote}{May 2024 -- Oct 2024}
 \begin{itemize}
-  \item Modernized legacy payroll export system within 6 months, enabling client to complete migration to new payroll platform and support pricing increases
+  \item Modernized legacy payroll export system within 6 months, enabling client to complete migration to new payroll platform and support pricing increases % staff — business impact + strategic migration
 \end{itemize}
 
 \role{HHA}{Lead Software Engineer, Backend}{Remote}{June 2024 -- Feb 2025}
 \begin{itemize}
-  \item Became primary technical interviewer for backend candidates due to ability to assess depth of knowledge through targeted questioning
-  \item Developed PDF-based employee onboarding system with pre-filled forms, reducing manual data entry and accelerating time-to-first-day
+  \item Became primary technical interviewer for backend candidates due to ability to assess depth of knowledge through targeted questioning % staff — hiring influence across org
+  \item Developed PDF-based employee onboarding system with pre-filled forms, reducing manual data entry and accelerating time-to-first-day % senior
+  \item Wrote ADR % TODO
 \end{itemize}
 
 \vspace{0.5em}
 \role{FairMoney}{Senior Software Engineer, Backend}{Remote}{June 2023 -- Feb 2024}
 \begin{itemize}
-  \item Extracted savings functionality from Ruby monolith into a dedicated Go microservice using the Strangler Fig pattern, serving hundreds of thousands of users
-  \item Led incident response for critical production issues affecting savings access, coordinating cross-functional debugging to restore service
-  \item Contributed to process improvements and advocated for better tooling and development practices
+  \item Extracted savings functionality from Ruby monolith into a dedicated Go microservice using the Strangler Fig pattern, serving hundreds of thousands of users % staff — architectural decision with cross-team impact
+  \item Led incident response for critical production issues affecting savings access, coordinating cross-functional debugging to restore service % staff — cross-functional coordination
+  \item Contributed to process improvements and advocated for better tooling and development practices % senior — reframe around concrete outcomes for staff
 \end{itemize}
 
 \vspace{0.5em} % DONE
 \role{Smily (Ex.\ Bookingsync)}{Senior Software Engineer, Backend}{Remote}{June 2022 -- May 2023}
 \begin{itemize}
-  \item Cut CI costs and runtime by 50–75\%, saving thousands of euros and halving developer feedback loop times
-  \item Introduced on-call rotation, reducing recurring production and support issues
-  \item Diagnosed and resolved critical production issues, reducing average resolution time to minutes
-  \item Built features using DDD and microservice patterns, increasing maintainability and decoupling
+  \item Cut CI costs and runtime by 50–75\%, saving thousands of euros and halving developer feedback loop times % staff — platform-level improvement affecting all engineers
+  \item Introduced on-call rotation, reducing recurring production and support issues % staff — process/culture change
+  \item Diagnosed and resolved critical production issues, reducing average resolution time to minutes % senior
+  \item Built features using DDD and microservice patterns, increasing maintainability and decoupling % senior
 \end{itemize}
 
 \vspace{0.5em}
 \role{HHA (ex.\ Annkissam)}{Senior Software Engineer}{Remote}{Jan 2020 -- June 2022}
 \begin{itemize}
-  \item Optimized critical database queries in the billing system handling hundreds of gigabytes of client data, reducing report generation times from hours to minutes and query execution from minutes to seconds
-  \item Became the go-to engineer for SQL performance issues across projects, diagnosing and resolving slow queries that blocked client operations
+  \item Optimized critical database queries in the billing system handling hundreds of gigabytes of client data, reducing report generation times from hours to minutes and query execution from minutes to seconds % senior
+  \item Became the go-to engineer for SQL performance issues across projects, diagnosing and resolving slow queries that blocked client operations % staff — cross-project influence, recognized expertise
 \end{itemize}
 
 \vspace{0.5em}
 \role{Annkissam}{Senior Software Engineer}{Remote}{Sept 2016 -- Dec 2019}
 \begin{itemize}
-  \item Led Ruby and Rails upgrades across multiple applications from Rails 3 through Rails 6, ensuring zero-downtime migrations and maintaining backward compatibility
-  \item Led client data migrations, writing custom ETL scripts to import data from diverse legacy systems for enterprise client onboarding
-  \item Mentored junior and mid-level engineers on Rails best practices, code quality, and career development
+  \item Led Ruby and Rails upgrades across multiple applications from Rails 3 through Rails 6, ensuring zero-downtime migrations and maintaining backward compatibility % staff — cross-application infrastructure work
+  \item Led client data migrations, writing custom ETL scripts to import data from diverse legacy systems for enterprise client onboarding % senior
+  \item Mentored junior and mid-level engineers on Rails best practices, code quality, and career development % senior
 \end{itemize}
 
 \vspace{0.5em}
 \role{Annkissam}{Software Engineer}{Remote}{Sept 2013 -- Aug 2016}
 \begin{itemize}
-  \item Built automated timesheet entry and invoice processing systems serving employers with hundreds to thousands of employees each
+  \item Built automated timesheet entry and invoice processing systems serving employers with hundreds to thousands of employees each % senior
 \end{itemize}
 
 \vspace{0.5em}
 \role{Catalyst Worldwide}{Team Lead, Software Engineer}{Bucharest, Romania}{Aug 2012 -- Sept 2013}
 \begin{itemize}
-  \item Spearheaded project that led to the founding of a 50-person local company
+  \item Spearheaded project that led to the founding of a 50-person local company % staff — outsized business impact
 \end{itemize}
 
 \vspace{0.5em} % DONE
 \role{Wizart Studios}{Web Developer}{Bucharest, Romania}{Nov 2010 -- Aug 2012}
 \begin{itemize}
-  \item Built and maintained websites for small local and international clients
-  \item Mentored and onboarded three junior developers
+  \item Built and maintained websites for small local and international clients % senior
+  \item Mentored and onboarded three junior developers % senior
 \end{itemize}
 
 % ── Skills ──────────────────────────────────────────
 \section*{Skills}
 
-\begin{longtable}{@{}p{4cm}p{11cm}@{}}
-  \textsc{Languages}      & Ruby, JavaScript, Go \\[0.15em]
-  \textsc{Frameworks}     & Ruby on Rails, RSpec, Sidekiq, Sorbet \\[0.15em]
-  \textsc{Infrastructure} & Linux, macOS, AWS, GCP, Docker, Git, GitHub Actions, CircleCI \\[0.15em]
-  \textsc{Databases}      & PostgreSQL, MySQL, Redis \\[0.15em]
-  \textsc{Practices}      & TDD, BDD, DDD, Performance Optimization, Code Review, Technical Mentoring \\
-\end{longtable}
+\textbf{Languages:} Ruby, JavaScript, TypeScript, Go, Python\\[0.3em]
+\textbf{Frameworks:} Ruby on Rails, Hotwire, RSpec, Sidekiq, Sorbet, REST APIs\\[0.3em]
+\textbf{Infrastructure:} Linux, macOS, AWS, GCP, Docker, Kubernetes, Git, CI/CD, GitHub Actions, CircleCI\\[0.3em]
+\textbf{Architecture:} Microservices, Distributed Systems, Cloud-Native Development, API Design\\[0.3em]
+\textbf{Messaging:} RabbitMQ, Kafka, Event-Driven Systems\\[0.3em]
+\textbf{Databases:} SQL, PostgreSQL, MySQL, SQlite, Redis, MongoDB, Memcached\\[0.3em]
+\textbf{AI Tooling:} GitHub Copilot, Claude Code\\[0.3em]
+\textbf{Practices:} TDD, BDD, DDD, Schema Design, Database Optimization, Performance Optimization, Code Review, Technical Mentoring
 
 % ── Education ───────────────────────────────────────
 \section*{Education}

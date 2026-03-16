@@ -1,4 +1,4 @@
-.PHONY: build watch clean setup release
+.PHONY: build watch clean setup release ats-check
 
 PDF = cv.pdf
 TEX = cv.tex
@@ -24,7 +24,14 @@ clean:
 release: $(PDF)
 	gh release create $(shell date +%Y-%m-%d) $(PDF) --title "CV — $(shell date +%Y-%m-%d)" --notes "Built on $(shell date +%Y-%m-%d)" --latest --clobber
 
+ats-check: $(PDF)
+	@echo "--- Font embedding ---"
+	@pdffonts $(PDF)
+	@echo ""
+	@echo "--- Text extraction preview ---"
+	@pdftotext $(PDF) -
+
 setup:
 	@echo "Installing dependencies..."
-	brew install tectonic fswatch
+	brew install tectonic fswatch poppler
 	@echo "Done. Run 'make watch' to start."
