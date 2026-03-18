@@ -22,7 +22,7 @@ clean:
 	rm -f $(PDF) *.aux *.log *.out
 
 release: $(PDF)
-	gh release create $(shell date +%Y-%m-%d) $(PDF) --title "CV — $(shell date +%Y-%m-%d)" --notes "Built on $(shell date +%Y-%m-%d)" --latest --clobber
+	gh release create $(shell date +%Y-%m-%d) $(PDF) --title "CV — $(shell date +%Y-%m-%d)" --notes "Built on $(shell date +%Y-%m-%d)" --latest
 
 ats-check: $(PDF)
 	@echo "--- Font embedding ---"
