@@ -5,3 +5,6 @@
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+
+# resume-tailor: per-job working dirs (job descriptions, decisions, cover letters, tailored snapshots)
+tailored/
