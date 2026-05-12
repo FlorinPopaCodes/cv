@@ -55,24 +55,6 @@
   \textit{#2} \hfill \textcolor{light}{#4}\\[0.2em]
 }
 
-% Grouped company header with multiple roles underneath
-\newcommand{\firstcompany}[3]{%
-  \needspace{6\baselineskip}%
-  \textbf{#1} \hfill \textcolor{light}{#2}\\
-  \textcolor{light}{\small #3}\\[0.2em]
-}
-\newcommand{\company}[3]{%
-  \vspace{0.5em}
-  \needspace{6\baselineskip}%
-  \textbf{#1} \hfill \textcolor{light}{#2}\\
-  \textcolor{light}{\small #3}\\[0.2em]
-}
-\newcommand{\subrole}[2]{%
-  \vspace{0.3em}
-  \needspace{3\baselineskip}%
-  \textit{#1} \hfill \textcolor{light}{#2}\\[0.2em]
-}
-
 \newcommand{\sep}{\enspace\textperiodcentered\enspace}
 
 \begin{document}
@@ -111,33 +93,11 @@ Track record of improving systems beyond code: introducing on-call processes, ra
   \item Reviewed hundreds of PRs and merged 100+ contributions to the Ruby on Rails monolith
 \end{itemize}
 
-\company{HHA}{Remote}{Annkissam, acquired by HHA \textnormal{\textperiodcentered} Sept 2013 -- Feb 2025}
-
-\subrole{Lead Software Engineer, Backend}{June 2024 -- Feb 2025}
+\role{HHA}{Lead Software Engineer, Backend}{Remote}{June 2024 -- Feb 2025}
 \begin{itemize}
   \item Screened all backend engineering candidates as the team's primary technical interviewer
   \item Developed PDF-based employee onboarding system with pre-filled forms, reducing manual data entry and accelerating time-to-first-day
 \end{itemize}
-
-\subrole{Senior Software Engineer}{Jan 2020 -- June 2022}
-\begin{itemize}
-  \item Diagnosed and resolved SQL performance bottlenecks across projects, unblocking client operations stalled by slow queries
-  \item Optimized billing queries over hundreds of gigabytes of data, cutting report generation from hours to minutes and query execution from minutes to seconds
-\end{itemize}
-
-\subrole{Senior Software Engineer}{Sept 2016 -- Dec 2019}
-\begin{itemize}
-  \item Led Ruby and Rails upgrades across multiple applications from Rails 3 through Rails 6, ensuring zero-downtime migrations and maintaining backward compatibility
-  \item Led client data migrations, writing custom ETL scripts to import data from diverse legacy systems for enterprise client onboarding
-  \item Mentored junior and mid-level engineers on Rails best practices, code quality, and career development
-\end{itemize}
-
-\subrole{Software Engineer}{Sept 2013 -- Aug 2016}
-\begin{itemize}
-  \item Built automated timesheet entry and invoice processing systems serving employers with hundreds to thousands of employees each
-\end{itemize}
-
-\newpage
 
 \role{FairMoney}{Senior Software Engineer, Backend}{Remote}{June 2023 -- Feb 2024}
 \begin{itemize}
@@ -149,6 +109,26 @@ Track record of improving systems beyond code: introducing on-call processes, ra
 \begin{itemize}
   \item Cut CI costs and runtime by 50–75\%, saving thousands of euros and halving developer feedback loop times
   \item Introduced on-call rotation and led incident response, reducing recurring issues and cutting resolution times to minutes
+\end{itemize}
+
+\role{Annkissam, acquired by HHA}{Senior Software Engineer}{Remote}{Jan 2020 -- June 2022}
+\begin{itemize}
+  \item Diagnosed and resolved SQL performance bottlenecks across projects, unblocking client operations stalled by slow queries
+  \item Optimized billing queries over hundreds of gigabytes of data, cutting report generation from hours to minutes and query execution from minutes to seconds
+\end{itemize}
+
+\newpage
+
+\role{Annkissam}{Senior Software Engineer}{Remote}{Sept 2016 -- Dec 2019}
+\begin{itemize}
+  \item Led Ruby and Rails upgrades across multiple applications from Rails 3 through Rails 6, ensuring zero-downtime migrations and maintaining backward compatibility
+  \item Led client data migrations, writing custom ETL scripts to import data from diverse legacy systems for enterprise client onboarding
+  \item Mentored junior and mid-level engineers on Rails best practices, code quality, and career development
+\end{itemize}
+
+\role{Annkissam}{Software Engineer}{Remote}{Sept 2013 -- Aug 2016}
+\begin{itemize}
+  \item Built automated timesheet entry and invoice processing systems serving employers with hundreds to thousands of employees each
 \end{itemize}
 
 \role{Catalyst Worldwide}{Team Lead, Software Engineer}{Bucharest, Romania}{Aug 2012 -- Sept 2013}
