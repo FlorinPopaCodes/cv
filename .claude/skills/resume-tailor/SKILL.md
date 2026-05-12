@@ -38,6 +38,14 @@ optimization, and builds the PDF with `tectonic`. English/US conventions only.
     and a summary of the `.impeccable.md` design constraints. **Read this before editing
     `cv.tex` in Phase 3.**
   - `references/cover-letter-template.tex` — LaTeX cover-letter template matching the CV.
+- **Companion skills for prose polish:**
+  - `beautiful-prose` — runs in Phase 3 over the rewritten Summary and the reworded bullets:
+    concrete nouns, strong verbs, varied rhythm, no filler, no cheap reversals.
+  - `humanizer` — runs in Phase 4 over the cover-letter body (and the new Summary): strips AI
+    tells and does its "what makes this obviously AI-generated?" audit + second pass.
+  - Both apply to *prose only*. They must not touch LaTeX markup, the `--` en-dash date ranges
+    (correct typography, not an AI em-dash), the contact block, or the bullet structure (a resume
+    needs bullets). If either skill is unavailable, do the equivalent pass by hand using its rules.
 
 ## Design constraints (always)
 
@@ -183,7 +191,14 @@ Edit the **working copy** of `cv.tex`:
    copy, but flag that it shouldn't land on `main` unless intended.
 6. **`\hypersetup`** — update `pdftitle` (e.g. "Florin Popa - <Target Role>"), `pdfkeywords`
    (comma-separated JD-relevant tech and domains), and `pdfsubject` if useful.
-7. **Page balance** — move the `\newpage` so the result is a clean ~2 pages: no orphaned section
+7. **Prose polish** — run the `beautiful-prose` skill over the rewritten Summary text and the
+   reworded bullet phrasing. Take its sharper wording: concrete nouns, strong verbs, varied
+   rhythm, no filler ("leverage", "spearhead", "impactful", "ultimately"), no "it's not X, it's Y"
+   reversals, no therapy/marketing tone. **Keep** the bullets, the short tech lists, the quantified
+   metrics, the ATS keywords, and the `--` date ranges — beautiful-prose's bans on bullets,
+   three-part lists, and `--` are relaxed inside this LaTeX resume (it has a "constrained formats"
+   note for exactly this). Don't let it restructure the document.
+8. **Page balance** — move the `\newpage` so the result is a clean ~2 pages: no orphaned section
    heading, no near-empty page 2. If the content genuinely won't fit two pages, tell the user and
    ask what to cut — do not shrink fonts or margins.
 
@@ -217,8 +232,13 @@ On approval:
 1. **Cover letter** (if requested in Phase 2): copy `references/cover-letter-template.tex` to
    `tailored/<company-slug>/cover-letter.tex`, fill the `[SLOT]` markers (date, hiring
    manager/team, company, opening hook, 1–2 body paragraphs mapping the strongest CV evidence to
-   the JD, closing). Build it: `tectonic tailored/<company-slug>/cover-letter.tex`. Same tone as
-   the CV — no clichés, specific, concise (~250–350 words).
+   the JD, closing). Same tone as the CV — no clichés, specific, concise (~250–350 words).
+   Then run the `humanizer` skill over the cover-letter body prose (and, while you're at it, over
+   the new Summary text in `cv.tex`): strip AI tells, then do its "what makes the below so
+   obviously AI generated?" audit and second-pass rewrite. Apply only to the body prose — leave
+   the LaTeX commands, the header/contact block, and the `[SLOT]` scaffolding alone. Finally build:
+   `tectonic tailored/<company-slug>/cover-letter.tex`. If the Summary changed from the humanizer
+   pass, `make build` again.
 2. **Snapshot** (optional): if the user wants to keep the tailored version, copy the current
    `cv.tex` to `tailored/<company-slug>/cv-<company-slug>.tex`.
 3. **Restore reminder**: tell the user `cv.tex` is now tailored — review `git diff`, then either
@@ -260,6 +280,9 @@ Run before presenting in Phase 3 (and after each iteration). Every item must pas
 
 **Anti-patterns — none of these**
 - [ ] Summary opening with "Seasoned / Dynamic / Results-driven / Passionate"
+- [ ] Summary / bullets / cover letter still carrying AI or corporate tells after the
+      `beautiful-prose` / `humanizer` pass — "it's not X, it's Y", "leverage / spearhead /
+      passionate", hollow tricolons, "ultimately / at its core", marketing or therapy tone
 - [ ] "References available upon request"
 - [ ] Skill percentage / proficiency ratings
 - [ ] Early career condensed to nothing
