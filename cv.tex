@@ -2,6 +2,18 @@
 \usepackage[english]{babel}
 \usepackage{libertinus}
 \usepackage{microtype}
+% Contact icons: the fontawesome5 package aborts tectonic (latn-script shaping),
+% so load the vendored OTFs by codepoint via fontspec instead.
+\usepackage{fontspec}
+\usepackage{accsupp}
+\newfontfamily\FAsolid{FontAwesome5Free-Solid-900.otf}[Path=fonts/]
+\newfontfamily\FAbrands{FontAwesome5Brands-Regular-400.otf}[Path=fonts/]
+% Wrap glyphs so they render visually but extract as nothing (ATS-clean).
+\newcommand{\faicon}[2]{\BeginAccSupp{ActualText={}}{#1\symbol{#2}}\EndAccSupp{}}
+\newcommand{\faEnvelope}{\faicon{\FAsolid}{"F0E0}}
+\newcommand{\faGlobe}{\faicon{\FAsolid}{"F0AC}}
+\newcommand{\faLinkedin}{\faicon{\FAbrands}{"F08C}}
+\newcommand{\faGithub}{\faicon{\FAbrands}{"F09B}}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \definecolor{linkblue}{HTML}{4A6274}
@@ -62,22 +74,22 @@
 % ── Header ──────────────────────────────────────────
 \begin{center}
   {\LARGE \textbf{Florin Popa}}\\[0.6em]
-  \href{mailto:pp.flrn@gmail.com}{pp.flrn@gmail.com}
+  \href{mailto:pp.flrn@gmail.com}{\faEnvelope\,pp.flrn@gmail.com}
   \sep
-  \href{https://www.linkedin.com/in/florin-popa-08405566/}{LinkedIn}
+  \href{https://www.linkedin.com/in/florin-popa-08405566/}{\faLinkedin\,LinkedIn}
   \sep
-  \href{https://github.com/FlorinPopaCodes}{FlorinPopaCodes}
+  \href{https://github.com/FlorinPopaCodes}{\faGithub\,FlorinPopaCodes}
   \sep
-  \href{https://florinpopa.dev}{florinpopa.dev}
+  \href{https://florinpopa.dev}{\faGlobe\,florinpopa.dev}
 \end{center}
 
 % ── Summary ─────────────────────────────────────────
 \section*{Summary}
 
-Backend engineer who drives technical direction across teams building regulated software: payroll engines, fintech platforms, and HR systems serving hundreds of thousands of users. Deep Ruby and Rails experience, from breaking apart monoliths to cutting CI costs by 75\%.
+I drive technical direction across teams building regulated software: payroll engines, fintech platforms, and HR systems serving hundreds of thousands of users. My Ruby and Rails work runs deep, from breaking apart monoliths to cutting CI costs by 75\%.
 
 \vspace{0.3em}
-Track record of improving systems beyond code: introducing on-call processes, raising the hiring bar, and multiplying team output through mentoring and code review.
+Beyond the code, I improve how teams work: standing up on-call processes, raising the hiring bar, and multiplying team output through mentoring and code review.
 
 % ── Experience ──────────────────────────────────────
 \section*{Experience}
