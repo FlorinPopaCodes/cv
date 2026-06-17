@@ -6,5 +6,10 @@
 *.fls
 *.fdb_latexmk
 
-# resume-tailor: per-job working dirs (job descriptions, decisions, cover letters, tailored snapshots)
-tailored/
+# resume-tailor: per-job artifacts dropped at the worktree root (gitignored on every branch)
+job-description.md
+decisions.md
+cover-letter.tex
+
+# resume-tailor: tailoring worktrees live here; never commit them
+.claude/worktrees/

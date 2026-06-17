@@ -146,8 +146,7 @@ managers). Keep:
 ## cv.tex is the master
 
 There is no separate master profile — `cv.tex` on `main` holds the full history. When tailoring:
-- **Reorder and reword freely** in the working copy.
+- **Reorder and reword freely** inside the job-specific worktree (`.claude/worktrees/tailor-<slug>`).
 - **Treat removals as job-specific** — dropping a skill or commenting out a role is fine for one
-  application, but it should not be committed to `main` unless the user explicitly wants the
-  master changed. Default: after the application, the user restores with `git checkout -- cv.tex`,
-  or keeps the tailored version on a branch / in `tailored/<company-slug>/`.
+  application. The `tailor/<slug>` branch holds those edits as a self-contained archive. Never
+  merge `tailor/<slug>` to `main` and never run `make release` from it — `main` stays canonical.
